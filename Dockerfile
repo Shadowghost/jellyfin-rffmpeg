@@ -1,4 +1,4 @@
-FROM jellyfin/jellyfin:stable
+FROM jellyfin/jellyfin:latest
 
 RUN apt update && \
     apt install -y openssh-client python3-yaml wget &&\
