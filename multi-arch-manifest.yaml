@@ -1,6 +1,6 @@
 image: bitwrk/jellyfin-rffmpeg:stable
 manifests:
-  - image: bitwrk/jellyfin-rffmpeg::stable-amd64
+  - image: bitwrk/jellyfin-rffmpeg:stable-amd64
     platform:
       architecture: amd64
       os: linux
