@@ -7,7 +7,7 @@ RUN apk add curl && curl -L ${QEMU_URL} | tar zxvf - -C . --strip-components 1
 FROM jellyfin/jellyfin:latest
 
 # Add QEMU
-COPY --from=qemu qemu-aarch64-static /usr/bin
+COPY --from=qemu qemu-arm-static /usr/bin
 
 RUN apt update && \
     apt install -y openssh-client python3-yaml wget &&\
