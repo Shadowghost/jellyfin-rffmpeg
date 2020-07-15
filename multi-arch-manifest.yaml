@@ -10,7 +10,7 @@ manifests:
       os: linux
       variant: v8
 
-image: bitwrk/jellyfin-rffmpeg::unstable
+image: bitwrk/jellyfin-rffmpeg:unstable
 manifests:
   - image: bitwrk/jellyfin-rffmpeg:unstable-amd64
     platform:
