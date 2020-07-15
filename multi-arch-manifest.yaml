@@ -8,7 +8,6 @@ manifests:
     platform:
       architecture: arm64
       os: linux
-      variant: v8
 
 image: bitwrk/jellyfin-rffmpeg:unstable
 manifests:
@@ -20,4 +19,3 @@ manifests:
     platform:
       architecture: arm64
       os: linux
-      variant: v8
