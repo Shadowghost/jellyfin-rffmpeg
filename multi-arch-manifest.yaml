@@ -4,6 +4,10 @@ manifests:
     platform:
       architecture: amd64
       os: linux
+  - image: bitwrk/jellyfin-rffmpeg:stable-armhf
+    platform:
+      architecture: arm
+      os: linux
   - image: bitwrk/jellyfin-rffmpeg:stable-arm64
     platform:
       architecture: arm64
@@ -14,6 +18,10 @@ manifests:
   - image: bitwrk/jellyfin-rffmpeg:unstable-amd64
     platform:
       architecture: amd64
+      os: linux
+  - image: bitwrk/jellyfin-rffmpeg:unstable-armhf
+    platform:
+      architecture: arm
       os: linux
   - image: bitwrk/jellyfin-rffmpeg:unstable-arm64
     platform:
