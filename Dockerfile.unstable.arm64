@@ -1,13 +1,16 @@
 FROM alpine AS qemu
 
-#QEMU Download
+# QEMU Download
 ENV QEMU_URL https://github.com/balena-io/qemu/releases/download/v4.0.0%2Bbalena2/qemu-4.0.0.balena2-aarch64.tar.gz
 RUN apk add curl && curl -L ${QEMU_URL} | tar zxvf - -C . --strip-components 1
 
-FROM jellyfin/jellyfin:unstable
+FROM --platform=linux/arm64 jellyfin/jellyfin:unstable
 
 # Add QEMU
 COPY --from=qemu qemu-aarch64-static /usr/bin
+
+# Add Labels
+LABEL maintainer admin@bitwrk.de
 
 RUN apt update && \
     apt install -y openssh-client python3-yaml wget &&\
