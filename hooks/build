@@ -1,0 +1,8 @@
+#!/bin/bash
+BUILD_ARCH=$(echo "${DOCKERFILE_PATH}" | cut -d '.' -f 2)
+
+if [ $BUILD_ARCH == "unstable"]; then
+    BUILD_ARCH=$(echo "${DOCKERFILE_PATH}" | cut -d '.' -f 3)
+fi
+
+docker build --platform ${BUILD_ARCH} -f ${DOCKERFILE_PATH} --pull -t ${IMAGE_NAME}
