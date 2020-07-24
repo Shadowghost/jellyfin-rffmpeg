@@ -1,2 +1,3 @@
 #!/bin/bash
-docker run --rm --privileged multiarch/qemu-user-static:register --reset
+docker run --rm --privileged docker/binfmt:a7996909642ee92942dcd6cff44b9b95f08dad64
+docker buildx create --use --name mybuilder

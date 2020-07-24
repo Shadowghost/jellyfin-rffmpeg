@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ $(echo "${DOCKERFILE_PATH}" | cut -d '.' -f 2) == "unstable"]; then
+    docker buildx build -f ${DOCKERFILE_PATH} -t bitwrk/jellyfin-rffmpeg:unstable --platform=linux/arm,linux/arm64,linux/amd64 . --push
+else
+    docker buildx build -f ${DOCKERFILE_PATH} -t bitwrk/jellyfin-rffmpeg:stable --platform=linux/arm,linux/arm64,linux/amd64 . --push
+fi
