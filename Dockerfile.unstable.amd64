@@ -2,8 +2,10 @@ FROM jellyfin/jellyfin:unstable
 
 RUN apt update && \
     apt install -y openssh-client python3-yaml wget &&\
-    wget https://github.com/joshuaboniface/rffmpeg/blob/master/rffmpeg.py -o /usr/local/bin/rffmpeg && \
+    wget https://raw.githubusercontent.com/joshuaboniface/rffmpeg/master/rffmpeg.py -O /usr/local/bin/rffmpeg && \
     chmod +x /usr/local/bin/rffmpeg && \
+    ln -s /usr/local/bin/rffmpeg /usr/local/bin/ffmpeg && \
+    ln -s /usr/local/bin/rffmpeg /usr/local/bin/ffprobe && \
     apt purge wget -y && \
     rm -rf /var/lib/apt/lists/* && \
     apt autoremove --purge -y && \

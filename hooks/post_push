@@ -2,5 +2,10 @@
 curl -Lo manifest-tool https://github.com/estesp/manifest-tool/releases/download/v1.0.2/manifest-tool-linux-amd64
 chmod +x manifest-tool
 
-./manifest-tool push from-spec multi-arch-manifest.yaml
-./manifest-tool push from-spec multi-arch-manifest-unstable.yaml
+BUILD_ARCH=$(echo "${DOCKERFILE_PATH}" | cut -d '.' -f 2)
+
+if [[ ${BUILD_ARCH} == "unstable" ]]; then
+    ./manifest-tool push from-spec multi-arch-manifest-unstable.yaml
+else
+    ./manifest-tool push from-spec multi-arch-manifest.yaml
+fi
