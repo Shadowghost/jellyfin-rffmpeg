@@ -1,5 +1,4 @@
 [![Docker Pull Count](https://img.shields.io/docker/pulls/bitwrk/jellyfin-rffmpeg)](https://hub.docker.com/r/bitwrk/jellyfin-rffmpeg)
-[![Docker Build Status](https://img.shields.io/docker/cloud/build/bitwrk/jellyfin-rffmpeg)](https://hub.docker.com/r/bitwrk/jellyfin-rffmpeg/builds)
 
 [![License](https://img.shields.io/github/license/Shadowghost/jellyfin-rffmpeg)](https://github.com/Shadowghost/jellyfin-rffmpeg/blob/master/LICENSE)
 [![Issues](https://img.shields.io/github/issues/Shadowghost/jellyfin-rffmpeg)](https://github.com/Shadowghost/jellyfin-rffmpeg/issues)
