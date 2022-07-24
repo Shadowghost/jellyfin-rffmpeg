@@ -13,11 +13,15 @@ COPY --from=qemu qemu-arm-static /usr/bin
 LABEL maintainer admin@bitwrk.de
 
 RUN apt update && \
-    apt install -y openssh-client python3-yaml wget &&\
-    wget https://raw.githubusercontent.com/joshuaboniface/rffmpeg/master/rffmpeg.py -O /usr/local/bin/rffmpeg && \
+    apt install -y openssh-client python3-click python3-yaml wget &&\
+    wget https://raw.githubusercontent.com/joshuaboniface/rffmpeg/master/rffmpeg -O /usr/local/bin/rffmpeg && \
     chmod +x /usr/local/bin/rffmpeg && \
     ln -s /usr/local/bin/rffmpeg /usr/local/bin/ffmpeg && \
     ln -s /usr/local/bin/rffmpeg /usr/local/bin/ffprobe && \
+    mkdir -p /etc/rffmpeg && \
+    wget https://raw.githubusercontent.com/joshuaboniface/rffmpeg/master/rffmpeg.yml.sample -O /etc/rffmpeg/rffmpeg.yml && \
+    sed -i 's/#persist: "/run/shm"/persist: "/run"' /etc/rffmpeg/rffmpeg.yml && \
+    sed -i 's/#state: "/var/lib/rffmpeg"/state: "/config/rffmpeg"' /etc/rffmpeg/rffmpeg.yml && \
     apt purge wget -y && \
     rm -rf /var/lib/apt/lists/* && \
     apt autoremove --purge -y && \
