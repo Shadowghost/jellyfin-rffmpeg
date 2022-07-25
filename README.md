@@ -9,6 +9,8 @@ This images extend the official [Jellyfin](https://jellyfin.org) [docker images]
 
 The rFFmpeg binary is located at `/usr/local/bin/rffmpeg` and accessible to Jellyfin as `/usr/local/bin/ffmpeg`.
 
+Mount the rffmpeg Database located at `/var/lib/rffmpeg/` to ensure the manually added hosts will be persistent.
+
 The stock configuration should work for most users, but you can overwrite the default configuration by mounting an alternative one to `/etc/rffmpeg/rffmpeg.yml`.
 
 To execute `rffmpeg` commands against the container, for instance to add hosts or view status, use:
